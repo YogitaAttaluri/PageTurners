@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>Page Turners</title>
+    <link rel="stylesheet" href="./styles/customer_login.css">
+
+    <script src="angular.min.js"> </script>
+    <script src="./scriptfiles/customer_login.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController" class="ng-scope">
+        <div class="container">
+            <!--card for login/signup-->
+            <div class="column login_column">
+
+                <!--Header for Login and Signup Tabs-->
+                <header class="tab-header">
+                    <div class="tab">
+                        <div class="row">
+                            <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Tab1')">Login</button>
+                            <button class="tablinks" onclick="openTab(event, 'Tab2')">Signup</button>
+                        </div>
+                        <div class="row">
+                            <div class="slider"></div>
+                        </div>
+                    </div>
+                </header>
+                <!--Header for Login and Signup Tabs-->
+
+                <!-- Inside Tab1 for Login -->
+                <div id="Tab1" class="tabcontent logintab">
+                    <img src="./assets/logo_customer_login.png" alt="Book Image" class="book-image">
+                    <h2>Welcome!</h2>
+                    <p>Please enter your details</p>
+                    <form name="login-form" id="loginForm">
+                        <div class="input-group">
+                            <label for="username">Username</label>
+                            <input type="text" ng-model="login.username" id="login-username" name="username"
+                                class="underline-input">
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" ng-model="login.password" id="login-password" name="password"
+                                class="underline-input">
+                        </div>
+                        <p ng-show="errorMessage" class="error-message">{{ errorMessage }}</p>
+                        <button ng-click="login()" class="login-button">Log In</button>
+                        <div class="signup">
+                            Don't have an account? Sign up!
+                            <!--
+                            <a href="#" class="signup-link" onclick="openTab(event, 'Tab2')">Sign
+                                up!</a>
+                                -->
+                        </div>
+                    </form>
+                </div>
+                <!-- Inside Tab1 for Login -->
+
+                <!-- Inside Tab2 for Signup -->
+                <div id="Tab2" class="tabcontent signuptab">
+                    <form id="signupForm">
+                        <img src="./assets/logo_customer_login.png" alt="Book Image" class="book-image">
+                        <h2>Welcome!</h2>
+                        <p>Create your Account!</p>
+                        <form name="sign-up-form">
+                            <div class="input-group">
+                                <label for="username">Username</label>
+                                <input type="text" ng-model="signup.username" id="signup-username" name="username"
+                                    class="underline-input" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="email">Email</label>
+                                <input type="email" ng-model="signup.email" name="email" class="underline-input"
+                                    required>
+                            </div>
+                            <div class="input-group">
+                                <label for="password">Password</label>
+                                <input type="password" ng-model="signup.password" id="signup-password" name="password"
+                                    class="underline-input" required>
+                            </div>
+                            <p ng-show="errorMessage1" class="error-message">{{ errorMessage1 }}</p>
+                            <p ng-show="successMessage" class="error-message">{{ successMessage }}</p>
+                            <button ng-click="signup()" class="login-button">Sign Up!</button>
+                        </form>
+                </div>
+                <!-- Inside Tab2 for Signup -->
+            </div>
+            <!--card for login/signup-->
+
+            <!--image-->
+            <div class="column login_pic">
+                <img src="./assets/customer_login.png" alt="Customer Login Image">
+            </div>
+            <!--image-->
+        </div>
+    </div>
+</body>
+
+
+</html>

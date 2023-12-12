@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="./styles/customer_navbar.css">
+<div class="navbar">
+    <div class="navbar-header">
+        <div class="navbar-brand"><a href="http://localhost:40112/customer_main.html">Page Turners</a></div>
+    </div>
+    <div class="menu-items">
+        <div class="navbar-cart">
+            <a href="http://localhost:40112/customer_selected.html" class="cart-icon">🛒<span class="cart-count"
+                    ng-show="cartItemCount > 0" ng-bind="cartItemCount">{{cartItemCount}}</span></a>
+        </div>
+        <div class="navbar-user" ng-mouseleave="hideDropdown()">
+            <a href="#" ng-click="toggleDropdown($event)">{{userName}}</a>
+            <ul class="user-dropdown" ng-show="dropdownVisible">
+                <li><a href="http://localhost:40112/customer_orders.html" ng-click="showOrders()">All Orders</a></li>
+                <li><a href="#" ng-click="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

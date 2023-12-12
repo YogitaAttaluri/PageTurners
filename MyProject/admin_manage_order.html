@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title>Page Turners</title>
+    <link rel="stylesheet" href="./styles/admin_manage_order.css">
+
+    <script src="./angular.min.js"> </script>
+    <script src="./scriptfiles/admin_manage_order.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController" class="ng-scope">
+        <!--Navigation Bar-->
+        <div ng-include="'./admin_navbar.html'"></div>
+        <!--Navigation Bar-->
+
+        <div class="container">
+            <h2>Order List</h2>
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Total Amount</th>
+                    <th>Status</th>
+                    <th>Update Status</th>
+                    <th>Action</th>
+                </tr>
+                <tr ng-repeat="order in orders">
+                    <td>{{ order.orderId }}</td>
+                    <td>{{ order.orderDate | date:'medium' }}</td>
+                    <td>
+                        <ul>
+                            <li ng-repeat="detail in order.orderDetails">
+                                {{ detail.bookName }} (Qty: {{ detail.quantity }})
+                            </li>
+                        </ul>
+                    </td>
+                    <td>{{ calculateTotal(order.orderDetails) | currency }}</td>
+                    <td>{{ order.status }}</td>
+                    <td>
+                        <select ng-model="order.newStatus" ng-options="status for status in statuses"></select>
+                    </td>
+                    <td>
+                        <button ng-click="updateOrderStatus(order)">Update</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>

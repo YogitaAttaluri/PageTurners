@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>Page Turners</title>
+    <link rel="stylesheet" href="./styles/customer_book.css">
+
+    <script src="./angular.min.js"> </script>
+    <script src="./scriptfiles/customer_book.js"></script>
+    <script src="./scriptfiles/CartService.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController" class="ng-scope">
+        <!--Navigation Bar-->
+        <div ng-include="'./customer_navbar.html'"></div>
+        <!--Navigation Bar-->
+
+        <!--Body for book overview-->
+        <div class="container">
+            <!--Uncomment later-->
+            <div class="column image-column">
+                <img ng-src="{{ book.imageUrl }}" alt="{{ book.bookName }}">
+            </div>
+            <div class="column details-column">
+                <h1>{{book.bookName}}</h1>
+                <p class="author">Author: {{book.author}}</p>
+                <p class="content">{{book.summary}}</p>
+                <div class="rating">Rating: {{book.rating}}</div>
+                <div class="price">Price: {{book.price}}</div>
+                <div class="cart">
+                    <button class="add-to-cart" ng-click="addToCart()">Add to Cart</button>
+                    <div class="cart-controls">
+                        <button ng-click="updateQuantity(-1)" ng-disabled="quantity <= 0">-</button>
+                        <span>{{quantity}}</span>
+                        <button ng-click="updateQuantity(1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--To be deleted (Just for front-end purposes)
+            <div class="column image-column">
+                <img ng-src="./assets/customer_login.png" alt="The Hobbit">
+            </div>
+            <div class="column details-column">
+                <h1>The Hobbit</h1>
+                <p class="author">Author: J.R.R. Tolkien</p>
+                <p class="content">"The Hobbit," written by J.R.R. Tolkien, is a tale of high adventure that introduces
+                    us to Bilbo
+                    Baggins,
+                    an unassuming hobbit who is thrust into an epic quest.
+                    The story follows Bilbo as he joins a group of dwarves and the wizard Gandalf to reclaim the
+                    dwarves'
+                    homeland from the fearsome dragon Smaug. Along the way, Bilbo encounters trolls, goblins, elves, and
+                    the creature Gollum, where he obtains the one ring with its invisible powers.
+                    It's a journey that tests Bilbo's courage and resourcefulness, proving that even the smallest
+                    character
+                    can make a big difference. The book is celebrated for its rich storytelling, detailed
+                    world-building,
+                    and its influence on the fantasy genre.
+                    <br><br>
+                    "The Hobbit," written by J.R.R. Tolkien, is a tale of high adventure that introduces us to Bilbo
+                    Baggins,
+                    an unassuming hobbit who is thrust into an epic quest.
+                    The story follows Bilbo as he joins a group of dwarves and the wizard Gandalf to reclaim the
+                    dwarves'
+                    homeland from the fearsome dragon Smaug. Along the way, Bilbo encounters trolls, goblins, elves, and
+                    the creature Gollum, where he obtains the one ring with its invisible powers.
+                    It's a journey that tests Bilbo's courage and resourcefulness, proving that even the smallest
+                    character
+                    can make a big difference. The book is celebrated for its rich storytelling, detailed
+                    world-building,
+                    and its influence on the fantasy genre.
+                    <br><br>
+                    "The Hobbit," written by J.R.R. Tolkien, is a tale of high adventure that introduces us to Bilbo
+                    Baggins,
+                    an unassuming hobbit who is thrust into an epic quest.
+                    The story follows Bilbo as he joins a group of dwarves and the wizard Gandalf to reclaim the
+                    dwarves'
+                    homeland from the fearsome dragon Smaug. Along the way, Bilbo encounters trolls, goblins, elves, and
+                    the creature Gollum, where he obtains the one ring with its invisible powers.
+                    It's a journey that tests Bilbo's courage and resourcefulness, proving that even the smallest
+                    character
+                    can make a big difference. The book is celebrated for its rich storytelling, detailed
+                    world-building,
+                    and its influence on the fantasy genre.
+                </p>
+                <div class="rating">Rating: 4.5/5</div>
+                <div class="cart">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <div class="cart-controls">
+                        <button ng-click="updateQuantity(-1)" ng-disabled="quantity <= 0">-</button>
+                        <span>{{ quantity }}</span>
+                        <button ng-click="updateQuantity(1)">+</button>
+                    </div>
+                </div>
+            </div>
+            To be deleted-->
+        </div>
+        <!--Body for book overview-->
+    </div>
+</body>

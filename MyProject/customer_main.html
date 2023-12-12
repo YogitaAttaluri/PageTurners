@@ -1,0 +1,203 @@
+<html>
+
+<head>
+    <title>Page Turners</title>
+    <link rel="stylesheet" href="./styles/customer_main.css">
+
+    <script src="./angular.min.js"> </script>
+    <script src="./scriptfiles/customer_main.js"></script>
+    <script src="./scriptfiles/CartService.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController" class="ng-scope">
+        <!--Navigation Bar-->
+        <div ng-include="'./customer_navbar.html'"></div>
+        <!--Navigation Bar-->
+        <!--
+        <div ng-include="'./test.html'"></div>-->
+        <div class="container title-caption">
+            <h1>Page Turners</h1>
+            <p>Where Every Page Turns to a New Adventure: Discover Your Next Read with Us!</p>
+        </div>
+
+        <div class="container book-tabs">
+            <header class="tab-header">
+                <div class="tab">
+                    <button class="tablinks" id="defaultOpen" ng-click="openTab($event, 'Tab1')">Fiction</button>
+                    <button class="tablinks" ng-click="openTab($event, 'Tab2')">Non-Fiction</button>
+                    <button class="tablinks" ng-click="openTab($event, 'Tab3')">Children</button>
+                    <button class="tablinks" ng-click="openTab($event, 'Tab4')">Academic</button>
+                    <button class="tablinks" ng-click="openTab($event, 'Tab5')">Science & Tech</button>
+                    <button class="tablinks" ng-click="openTab($event, 'Tab6')">Art & Design</button>
+                    <button class="tablinks" ng-click="openTab($event, 'Tab7')">Self Help</button>
+                    <button class="tablinks" ng-click="openTab($event, 'Tab8')">Spiritual</button>
+                </div>
+            </header>
+
+            <div id="Tab1" class="tabcontent">
+                <!--To be deleted (Written for front-end purposes)
+                <div class="card-container">
+                    <div class="card">
+                        <a href="#">
+                            <div class="card-image" ng-style="{'background-image': 'url(./assets/customer_login.png)'}">
+                            </div>
+                            <div class="card-title">Award of Earth Sea</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="card-image" ng-style="{'background-image': 'url(./assets/customer_pic.png)'}">
+                            </div>
+                            <div class="card-title">Dracula</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="card-image"
+                                ng-style="{'background-image': 'url(./assets/logo_customer_login.png)'}">
+                            </div>
+                            <div class="card-title">Fahrenheit</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="card-image" ng-style="{'background-image': 'url(./assets/customer_login.png)'}">
+                            </div>
+                            <div class="card-title">The Hobbit</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="card-image" ng-style="{'background-image': 'url(./assets/customer_login.png)'}">
+                            </div>
+                            <div class="card-title">Award of Earth Sea</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="card-image" ng-style="{'background-image': 'url(./assets/customer_login.png)'}">
+                            </div>
+                            <div class="card-title">Award of Earth Sea</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="card-image" ng-style="{'background-image': 'url(./assets/customer_login.png)'}">
+                            </div>
+                            <div class="card-title">Award of Earth Sea</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="card-image" ng-style="{'background-image': 'url(./assets/customer_login.png)'}">
+                            </div>
+                            <div class="card-title">Award of Earth Sea</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="card-image" ng-style="{'background-image': 'url(./assets/customer_login.png)'}">
+                            </div>
+                            <div class="card-title">Award of Earth Sea</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <div class="card-image" ng-style="{'background-image': 'url(./assets/customer_login.png)'}">
+                            </div>
+                            <div class="card-title">Award of Earth Sea</div>
+                        </a>
+                    </div>
+
+                </div>
+                To be deleted-->
+                <div class="card-container">
+                    <div class="card" ng-repeat="book in books['Fiction']">
+                        <a href="http://localhost:40112/customer_book.html?bookId={{book.bookId}}">
+                            <div class="card-image" ng-style="{'background-image': 'url(' + book.imageUrl + ')'}"></div>
+                            <div class="card-title">{{book.bookName}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Tab2" class="tabcontent">
+                <div class="card-container">
+                    <div class="card" ng-repeat="book in books['Non-Fiction']">
+                        <a href="http://localhost:40112/customer_book.html?bookId={{book.bookId}}">
+                            <div class="card-image" ng-style="{'background-image': 'url(' + book.imageUrl + ')'}"></div>
+                            <div class="card-title">{{book.title}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Tab3" class="tabcontent">
+                <div class="card-container">
+                    <div class="card" ng-repeat="book in books['Children']">
+                        <a href="http://localhost:40112/customer_book.html?bookId={{book.bookId}}">
+                            <div class="card-image" ng-style="{'background-image': 'url(' + book.imageUrl + ')'}"></div>
+                            <div class="card-title">{{book.title}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Tab4" class="tabcontent">
+                <div class="card-container">
+                    <div class="card" ng-repeat="book in books['Academic']">
+                        <a href="http://localhost:40112/customer_book.html?bookId={{book.bookId}}">
+                            <div class="card-image" ng-style="{'background-image': 'url(' + book.imageUrl + ')'}"></div>
+                            <div class="card-title">{{book.title}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Tab5" class="tabcontent">
+                <div class="card-container">
+                    <div class="card" ng-repeat="book in books['Science-n-Tech']">
+                        <a href="http://localhost:40112/customer_book.html?bookId={{book.bookId}}">
+                            <div class="card-image" ng-style="{'background-image': 'url(' + book.imageUrl + ')'}"></div>
+                            <div class="card-title">{{book.title}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Tab6" class="tabcontent">
+                <div class="card-container">
+                    <div class="card" ng-repeat="book in books['Art-n-Design']">
+                        <a href="http://localhost:40112/customer_book.html?bookId={{book.bookId}}">
+                            <div class="card-image" ng-style="{'background-image': 'url(' + book.imageUrl + ')'}"></div>
+                            <div class="card-title">{{book.title}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Tab7" class="tabcontent">
+                <div class="card-container">
+                    <div class="card" ng-repeat="book in books['Self-Help']">
+                        <a href="http://localhost:40112/customer_book.html?bookId={{book.bookId}}">
+                            <div class="card-image" ng-style="{'background-image': 'url(' + book.imageUrl + ')'}"></div>
+                            <div class="card-title">{{book.title}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Tab8" class="tabcontent">
+                <div class="card-container">
+                    <div class="card" ng-repeat="book in books['Spiritual']">
+                        <a href="http://localhost:40112/customer_book.html?bookId={{book.bookId}}">
+                            <div class="card-image" ng-style="{'background-image': 'url(' + book.imageUrl + ')'}"></div>
+                            <div class="card-title">{{book.title}}</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

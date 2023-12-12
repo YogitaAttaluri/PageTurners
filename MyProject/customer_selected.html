@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title>Page Turners</title>
+    <link rel="stylesheet" href="./styles/customer_selected.css">
+
+    <script src="./angular.min.js"> </script>
+    <script src="./scriptfiles/customer_selected.js"></script>
+    <script src="./scriptfiles/CartService.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController" class="ng-scope">
+        <!--Navigation Bar-->
+        <div ng-include="'./customer_navbar.html'"></div>
+        <!--Navigation Bar-->
+        <!--cart-->
+        <div class="container">
+            <!--Cart headers-->
+            <div class="row header">
+                <div class="column">
+                    <h2>BOOKS SELECTED</h2>
+                </div>
+                <div class="column">
+
+                </div>
+                <div class="column">
+                    <h2>COPIES</h2>
+                </div>
+                <div class="column">
+                    <h2>AMOUNT</h2>
+                </div>
+            </div>
+            <!--Cart headers-->
+
+            <!--Cart values-->
+            <div class="row">
+                <div class="column selectedbook">
+                    <div class="cart-item" ng-repeat="book in books">
+                        <span class="book-title">{{ book.bookName }}</span>
+                    </div>
+                </div>
+
+                <div class="column quantitybuttons">
+                    <div class="cart-item" ng-repeat="book in books">
+                        <div class="quantity-controls">
+                            <button ng-click="updateQuantity(book, -1)" ng-disabled="book.quantity <= 0">-</button>
+                            <span class="quantity">{{ book.quantity }}</span>
+                            <button ng-click="updateQuantity(book, 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column copies">
+                    <div class="cart-item" ng-repeat="book in books">
+                        <span class="copies">{{ book.quantity }}</span>
+                    </div>
+                </div>
+
+                <div class="column amount">
+                    <div class="cart-item" ng-repeat="book in books">
+                        <span class="amount">{{ book.quantity * book.price | currency }}</span>
+                    </div>
+                </div>
+            </div>
+            <!--Cart values-->
+
+            <!--Totals-->
+            <div class="row">
+                <div class="column">
+                    <span class="total">Total</span>
+                </div>
+                <div class="column">
+
+                </div>
+                <div class="column">
+                    <span class="copies total">{{ totalQuantity() }}</span>
+                </div>
+                <div class="column">
+                    <span class="amount total">{{ totalAmount() | currency }}</span>
+                </div>
+            </div>
+            <!--Totals-->
+
+            <div class="cart">
+                <button class="add-to-cart" ng-click="checkout()">Checkout</button>
+            </div>
+
+        </div>
+        <!--cart-->
+
+    </div>
+</body>
+
+</html>

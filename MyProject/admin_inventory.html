@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <title>Page Turners</title>
+    <link rel="stylesheet" href="./styles/admin_inventory.css">
+
+    <script src="./angular.min.js"> </script>
+    <script src="./scriptfiles/admin_inventory.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController" class="ng-scope">
+        <!--Navigation Bar-->
+        <div ng-include="'./admin_navbar.html'"></div>
+        <!--Navigation Bar-->
+
+        <div class="container book-name">
+            <input type="text" ng-model="bookName" id="enterBook" class="enter-book">
+        </div>
+        <div class="options-container">
+            <div class="options">
+                <button ng-click="submit('add')" class="add-button">Add Book</button>
+                <button ng-click="submit('edit')" class="edit-button">Edit Book</button>
+                <button ng-click="submit('delete')" class="delete-button">Delete Book</button>
+                <button ng-click="submit('all-books')" class="all-books">All Books</button>
+            </div>
+        </div>
+        <div class="container-forms">
+            <!-- Edit Book Form -->
+            <div ng-show="editFormVisible" class="form-container">
+                <form ng-submit="submitEditForm()" class="form-show">
+                    <input type="text" ng-model="editedBook.bookName" placeholder="Book Name" required />
+                    <input type="text" ng-model="editedBook.author" placeholder="Author" required />
+                    <input type="text" ng-model="editedBook.category" placeholder="Category" required />
+                    <input type="number" ng-model="editedBook.price" placeholder="Price" required />
+                    <input type="text" ng-model="editedBook.imageUrl" placeholder="URL" />
+                    <textarea ng-model="editedBook.summary" placeholder="Summary"></textarea>
+                    <input type="number" ng-model="editedBook.rating" placeholder="Rating" required />
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <!-- Add Book Form -->
+            <div ng-show="addFormVisible" class="form-container">
+                <form ng-submit="submitAddForm()">
+                    <!-- Fields same as Edit Book Form -->
+                    <input type="text" ng-model="newBook.bookName" placeholder="Book Name" required />
+                    <input type="text" ng-model="newBook.author" placeholder="Author" required />
+                    <input type="text" ng-model="newBook.category" placeholder="Category" required />
+                    <input type="number" ng-model="newBook.price" placeholder="Price" required />
+                    <input type="text" ng-model="newBook.imageUrl" placeholder="URL" />
+                    <textarea ng-model="newBook.summary" placeholder="Summary"></textarea>
+                    <input type="number" ng-model="newBook.rating" placeholder="Rating" required />
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <!-- Confirmation Dialog for Delete -->
+            <div ng-show="deleteConfirmVisible" class="confirmation-dialog">
+                <p>Do you want to proceed and delete this book?</p>
+                <button ng-click="confirmDelete()">Yes</button>
+                <button ng-click="cancelDelete()">No</button>
+            </div>
+
+            <!-- All Books Table -->
+            <div ng-show="allBooksVisible" class="all-books-table">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>URL</th>
+                        <th>Summary</th>
+                        <th>Rating</th>
+                    </tr>
+                    <tr ng-repeat="book in allBooks">
+                        <td>{{book.bookName}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.category}}</td>
+                        <td>{{book.price}}</td>
+                        <td>{{book.imageUrl}}</td>
+                        <td>{{book.summary}}</td>
+                        <td>{{book.rating}}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

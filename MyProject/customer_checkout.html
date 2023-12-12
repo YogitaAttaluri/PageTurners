@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>Page Turners</title>
+    <link rel="stylesheet" href="./styles/customer_checkout.css">
+
+    <script src="./angular.min.js"> </script>
+    <script src="./scriptfiles/customer_checkout.js"></script>
+    <script src="./scriptfiles/CartService.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController" class="ng-scope">
+        <!--Navigation Bar-->
+        <div ng-include="'./customer_navbar.html'"></div>
+        <!--Navigation Bar-->
+
+        <div class="container">
+            <div class="column">
+                <form name="orderForm" ng-submit="submitOrder()" novalidate>
+
+                    <div class="form-section">
+                        <label for="shippingAddress">Enter the Shipping Address</label>
+                        <textarea id="shippingAddress" ng-model="order.shippingAddress" required></textarea>
+                    </div>
+
+                    <div class="card-details">
+                        <label>Enter the Card Details</label>
+                        <div class="input-row">
+                            <input type="number" ng-model="order.cardNumber" placeholder="Card Number"
+                                class="card-number" required maxlength="19" />
+                            <input type="number" ng-model="order.cvv" placeholder="CVV" class="cvv" required
+                                maxlength="4" />
+                        </div>
+                        <div class="input-row">
+                            <input type="text" ng-model="order.expiry" placeholder="Expiry (MM/YY)" required
+                                maxlength="5" ng-pattern="/^\d{2}\/\d{2}$/" />
+                            <input type="text" ng-model="order.zip" placeholder="Zip" required />
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="submit">Submit Order</button>
+                    </div>
+                    <!--
+                    <div class="confirmation" ng-show="orderPlaced">
+                        Order Placed Successfully!
+                    </div>
+                    -->
+                    <div ng-show="orderForm.$submitted || orderForm.$touched">
+                        <div ng-show="orderForm.shippingAddress.$error.required">Shipping address is required.</div>
+                        <div ng-show="orderForm.cardNumber.$error.required">Card number is required.</div>
+                        <div ng-show="orderForm.cvv.$error.required">CVV is required.</div>
+                        <div ng-show="orderForm.expiry.$error.required">Expiry date is required.</div>
+                        <div ng-show="orderForm.expiry.$error.pattern">Expiry date format should be MM/YY.</div>
+                        <div ng-show="orderForm.zip.$error.required">Zip is required.</div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="column">
+                <div class="total-amount-section">
+                    <label>Total Amount</label>
+                    <div class="amount">{{ totalAmount | currency }}</div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

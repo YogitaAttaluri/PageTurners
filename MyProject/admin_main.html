@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Page Turners</title>
+    <link rel="stylesheet" href="./styles/admin_main.css">
+
+    <script src="./angular.min.js"> </script>
+    <script src="./scriptfiles/admin_main.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController" class="ng-scope">
+        <!--Navigation Bar-->
+        <div ng-include="'./admin_navbar.html'"></div>
+        <!--Navigation Bar-->
+
+        <div class="card-container">
+            <div class="card">
+                <a href="http://localhost:40112/admin_inventory.html">
+                    <div class="card-image card1">
+                    </div>
+                    <div class="card-title">Manage Inventory</div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="http://localhost:40112/admin_manage_order.html">
+                    <div class="card-image card2">
+                    </div>
+                    <div class="card-title">Manage Orders</div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="http://localhost:40112/admin_add_user.html">
+                    <div class="card-image card3">
+                    </div>
+                    <div class="card-title">Add User</div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

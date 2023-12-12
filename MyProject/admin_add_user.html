@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>Page Turners</title>
+    <link rel="stylesheet" href="./styles/admin_add_user.css">
+
+    <script src="./angular.min.js"> </script>
+    <script src="./scriptfiles/admin_add_user.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController" class="ng-scope">
+        <!--Navigation Bar-->
+        <div ng-include="'./admin_navbar.html'"></div>
+        <!--Navigation Bar-->
+        <h1>Add/Edit/Delete User</h1>
+        <div class="container user-name">
+            <input type="text" ng-model="inputUserName" id="enterUser" class="enter-user">
+        </div>
+        <div class="options-container">
+            <div class="options">
+                <button ng-click="submit('add')" class="add-user">Add User</button>
+                <button ng-click="submit('edit')" class="edit-user">Edit User</button>
+                <button ng-click="submit('delete')" class="delete-user">Delete User</button>
+                <button ng-click="submit('all-users')" class="all-users">All Users</button>
+            </div>
+        </div>
+
+        <div class="container-forms">
+            <!-- Edit Book Form -->
+            <div ng-show="editFormVisible" class="form-container">
+                <form ng-submit="submitEditForm()" class="form-show">
+
+                    <label for="username">Username:</label>
+                    <input id="username" ng-model="editedUser.userName" placeholder="username" required>
+
+                    <label for="email">Email:</label>
+                    <input id="email" ng-model="editedUser.email" placeholder="email" required>
+
+                    <label for="password">Password:</label>
+                    <input id="password" ng-model="editedUser.password" placeholder="password" required>
+
+                    <label for="isAdmin">Admin:</label>
+                    <input id="isAdmin" ng-model="editedUser.access">
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <!-- Add Book Form -->
+            <div ng-show="addFormVisible" class="form-container">
+                <form ng-submit="submitAddForm()" class="form-show">
+
+                    <label for="username">Username:</label>
+                    <input id="username" ng-model="newUser.userName" placeholder="username" required>
+
+                    <label for="email">Email:</label>
+                    <input id="email" ng-model="newUser.email" placeholder="email" required>
+
+                    <label for="password">Password:</label>
+                    <input id="password" ng-model="newUser.password" placeholder="password" required>
+
+                    <label for="isAdmin">Admin:</label>
+                    <input id="isAdmin" ng-model="newUser.access">
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <!-- Confirmation Dialog for Delete -->
+            <div ng-show="deleteConfirmVisible" class="confirmation-dialog">
+                <p>Do you want to proceed and delete this user?</p>
+                <button ng-click="confirmDelete()">Yes</button>
+                <button ng-click="cancelDelete()">No</button>
+            </div>
+
+            <div ng-show="allUsersVisible" class="all-users-table">
+                <table>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Admin or not</th>
+                    </tr>
+                    <tr ng-repeat="user in allUsers">
+                        <td>{{user.userId}}</td>
+                        <td>{{user.userName}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.password}}</td>
+                        <td>{{user.access}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="./styles/admin_navbar.css">
+<div class="navbar">
+    <div class="navbar-header">
+        <div class="navbar-brand"><a href="http://localhost:40112/admin_main.html">Page Turners</a></div>
+    </div>
+    <div class="menu-items">
+        <div class="navbar-user" ng-mouseleave="hideDropdown()">
+            <a href="#" ng-click="toggleDropdown($event)">{{userName}}</a>
+            <ul class="user-dropdown" ng-show="dropdownVisible">
+                <li><a href="#" ng-click="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

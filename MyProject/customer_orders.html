@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title>Page Turners</title>
+    <link rel="stylesheet" href="./styles/customer_orders.css">
+
+    <script src="./angular.min.js"> </script>
+    <script src="./scriptfiles/customer_orders.js"></script>
+    <script src="./scriptfiles/CartService.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController" class="ng-scope">
+        <!--Navigation Bar-->
+        <div ng-include="'./customer_navbar.html'"></div>
+        <!--Navigation Bar-->
+
+        <div class="container">
+            <div class="orders-header">
+                <h2>All Orders</h2>
+            </div>
+
+            <!--Order Cards-->
+            <div ng-repeat="order in orders" class="order-card">
+                <div class="order-title">
+                    <h3>Order #{{ order.orderId }}</h3>
+                </div>
+                <div class="order-details">
+                    <div class="order-item" ng-repeat="item in order.orderDetails">
+                        <div class="item-name">{{ item.bookName }}</div>
+                        <div class="item-quantity">{{ item.quantity }}</div>
+                        <div class="item-price">{{ item.price | currency }}</div>
+                    </div>
+                </div>
+                <div class="status">
+                    <strong>{{order.status}}</strong>
+                </div>
+                <div class="order-total">
+                    <strong>Total: {{ calculateOrderTotal(order) | currency }}</strong>
+                </div>
+            </div>
+            <!--To be deleted (Added for front-end purposes)
+            <div class="order-card">
+                <div class="order-title">
+                    <h3>Order #986</h3>
+                </div>
+                <div class="order-details">
+                    <div class="order-item">
+                        <div class="item-name">Shakespear's Hamlet</div>
+                        <div class="item-quantity">3</div>
+                        <div class="item-price">10 USD</div>
+                    </div>
+                </div>
+                <div class="order-total">
+                    <strong>Total: 30 USD</strong>
+                </div>
+            </div>
+
+            <div class="order-card">
+                <div class="order-title">
+                    <h3>Order #986</h3>
+                </div>
+                <div class="order-details">
+                    <div class="order-item">
+                        <div class="item-name">Shakespear's Hamlet</div>
+                        <div class="item-quantity">3</div>
+                        <div class="item-price">10 USD</div>
+                    </div>
+                </div>
+                <div class="order-details">
+                    <div class="order-item">
+                        <div class="item-name">Meluha</div>
+                        <div class="item-quantity">5</div>
+                        <div class="item-price">50 USD</div>
+                    </div>
+                </div>
+                <div class="order-total">
+                    <strong>Total: 80 USD</strong>
+                </div>
+            </div>
+            To be deleted-->
+            <!--Order Cards-->
+        </div>
+        <!--Orders Section-->
+
+    </div>
+</body>
+
+</html>
