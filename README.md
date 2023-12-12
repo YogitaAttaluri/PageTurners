@@ -2,6 +2,7 @@
 This book selling web application features a customer side with a user-friendly interface for browsing, searching, and purchasing books, and an admin side for managing inventory, orders, and customer data. 
 
 **Features**
+
 **Customer Side:**
 1) Browse and Search: Customers can explore a variety of book genres and use search functionality to find specific books.
 2) Book Details: Access detailed information about books including summaries, ratings, and prices.
