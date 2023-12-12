@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>Page Turners</title>
+    <link rel="stylesheet" href="./styles/admin_login.css">
+
+    <script src="angular.min.js"> </script>
+    <script src="./scriptfiles/admin_login.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myController" class="ng-scope">
+        <div class="container">
+            <!--image-->
+            <div class="column login_pic">
+                <img src="./assets/admin_login.png" alt="Customer Login Image">
+            </div>
+            <!--image-->
+
+            <!--login-->
+            <div class="column login_column">
+
+                <!-- Inside Tab1 for Login -->
+                <h2>Page Turners</h2>
+                <h1>Welcome Back!</h1>
+                <form class="login-form">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" ng-model="user.username" id="username" class="username">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" ng-model="user.password" id="password" class="password">
+                    </div>
+                    <p ng-show="errorMessage" class="error-message">{{ errorMessage }}</p>
+                    <button ng-click="login()" class="login-button">Log In</button>
+                </form>
+                <!-- Inside Tab1 for Login -->
+
+
+            </div>
+            <!--login-->
+        </div>
+
+        <p id="output">
+        </p>
+    </div>
+</body>
+
+
+</html>
