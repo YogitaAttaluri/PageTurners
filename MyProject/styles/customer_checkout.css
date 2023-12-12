@@ -1,0 +1,183 @@
+/*checkout*/
+body {
+    background-image: url('../assets/checkout.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 50%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.column {
+    margin: 0 auto;
+    flex: 1;
+    /* Makes both columns take up equal space */
+    padding: 10px;
+    /* Spacing between the columns */
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+input,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
+
+label {
+    padding-bottom: 20px !important;
+    font-size: large;
+}
+
+.total-amount-section {
+    text-align: right;
+}
+
+.amount {
+    font-size: 2em;
+    font-weight: bold;
+    font-size: large;
+}
+
+.confirmation {
+    color: green;
+    margin-top: 20px;
+}
+
+.card-details {
+    margin-bottom: 20px;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.input-row input[type="text"] {
+    margin-right: 10px;
+    /* Adds spacing between the inputs */
+    padding: 10px;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+}
+
+.input-row input[type="text"]:last-child {
+    margin-right: 0;
+    /* Removes spacing for the last input */
+}
+
+.input-row .card-number {
+    flex-grow: 2;
+    /* card number will take twice as much width as cvv */
+}
+
+.input-row .cvv {
+    flex-grow: 1;
+}
+
+.shipping-address {
+    display: block;
+    width: 100%;
+    height: 80px;
+    /* Double height compared to other text inputs */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    word-wrap: break-word;
+}
+
+.form-section textarea {
+    width: 100%;
+    /* Full width of its container */
+    height: 80px;
+    /* Double the standard height */
+    padding: 10px;
+    /* Padding inside the textarea */
+    border: 1px solid #ccc;
+    /* Standard border */
+    border-radius: 4px;
+    /* Rounded corners */
+    resize: vertical;
+    /* Allow vertical resizing only */
+    box-sizing: border-box;
+    /* Include padding and border in the width and height */
+    white-space: pre-wrap;
+    /* Ensures whitespace and newlines are preserved */
+    overflow-wrap: break-word;
+    /* Breaks words that are too long to fit */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    /* Centers the button horizontally */
+    align-items: center;
+    /* Centers the button vertically */
+    height: 100px;
+    /* Provide a height for the container */
+}
+
+button {
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 200px;
+    height: 50px;
+}
+
+button:hover {
+    background: #555;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .input-row {
+        flex-direction: column;
+    }
+
+    .input-row input[type="text"] {
+        margin-bottom: 10px;
+        /* Adds spacing between inputs when stacked */
+        width: 100%;
+        /* Full width on small screens */
+    }
+
+    .input-row input[type="text"]:last-child {
+        margin-bottom: 0;
+        /* Removes spacing for the last input when stacked */
+    }
+}
+
+
+/*checkout*/

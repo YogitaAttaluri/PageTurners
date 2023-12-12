@@ -1,0 +1,102 @@
+/*Book overview*/
+.container {
+    display: flex;
+    width: 96%;
+    height: 80vh;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.column {
+    flex: 1;
+}
+
+.image-column {
+    margin: auto 0;
+    margin-right: 50px;
+    max-width: 40%;
+    text-align: center;
+    padding-right: 20px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.details-column {
+    margin-right: auto;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding-left: 20px;
+}
+
+h1 {
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.author {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.content {
+    font-size: large;
+}
+
+.cart {
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+}
+
+.add-to-cart {
+    background-color: #a58a6a;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin: 4px 2px;
+}
+
+.cart-controls button {
+    padding: 10px;
+    margin: 5px;
+    width: 30px;
+    border-radius: 20px;
+}
+
+.cart-controls span {
+    min-width: 30px;
+    text-align: center;
+}
+
+.rating {
+    margin-bottom: auto;
+    font-weight: bold;
+}
+
+.price {
+    margin-top: auto;
+    font-weight: bold;
+}
+
+/*Book Overview*/

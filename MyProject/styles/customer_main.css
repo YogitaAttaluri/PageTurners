@@ -1,0 +1,117 @@
+/*heading and caption*/
+.container.title-caption {
+    width: 96%;
+    margin: 20px auto;
+    height: 400px;
+    background-image: url('./../assets/customer_pic.png');
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1 {
+    font-size: 120px;
+    margin-bottom: 0px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.container p {
+    font-size: 40px;
+    margin-top: 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+/*heading and caption*/
+
+/*book tabs*/
+.book-tabs {
+    height: auto;
+    width: 96%;
+    margin: 0px auto;
+}
+
+.tab {
+    display: flex;
+    flex-direction: row;
+}
+
+/*Added because of Flash of Unstyled Content 
+(when page loads it showing all tabs content in flash before settling on the actual value)*/
+.tabcontent {
+    display: none;
+}
+
+.tablinks {
+    position: relative;
+    flex: 1;
+    font-size: large;
+    border-radius: 25px;
+    background-color: #e8e8e8;
+    color: #8a8a8a;
+    border: none;
+    padding: 15px;
+    margin: 0 5px;
+    transition: transform 1s ease, box-shadow 1s ease;
+}
+
+.tablinks button {
+    cursor: pointer;
+}
+
+.tablinks:hover {
+    background-color: #a58a6a;
+    color: #e8e8e8;
+    transform: scale(1.05);
+}
+
+.tablinks.active {
+    background-color: #a58a6a;
+    color: #e8e8e8;
+    transform: scale(1.05);
+}
+
+/*book tabs*/
+
+/*book cards*/
+
+.card-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* Align items to the start */
+    align-items: flex-start;
+    /* Align items vertically to the start */
+}
+
+.card {
+    width: 24%;
+    margin: 10px auto;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+
+.card-image {
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-title {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    color: white;
+    background-color: #a58a6a;
+    padding: 5px;
+    font-size: large;
+}
+
+/*book cards*/

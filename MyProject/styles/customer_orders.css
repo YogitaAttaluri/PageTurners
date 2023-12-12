@@ -1,0 +1,65 @@
+/*orders*/
+body {
+    background-image: url('../assets/orders.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 70%;
+}
+
+/* Basic styling for the orders container */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.orders-header {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+/* Styling for each order card */
+.order-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: inherit;
+    width: 50%;
+    font-size: large;
+}
+
+.order-title {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-details {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-item {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 5fr 4fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.order-item.item-name {
+    text-align: start;
+}
+
+.order-total {
+    text-align: right;
+    font-weight: bold;
+}
+
+
+/*orders*/
