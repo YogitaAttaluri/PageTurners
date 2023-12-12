@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "height": 6.3,
+  "name": "George Washington",
+  "likes": [
+    "food",
+    "sports"
+  ]
+}

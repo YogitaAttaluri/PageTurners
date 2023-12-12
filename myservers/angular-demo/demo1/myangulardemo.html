@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <title>AngularJS Demo - HTML file</title>
+       <!-- Main angular library: -->
+       <script type="text/javascript" src="angular.min.js"></script>
+
+       <!-- Our javacript code: -->
+       <script type="text/javascript" src="myform.js"></script>
+</head>
+
+<body>
+   <h1>AngularJS Demo</h1>
+
+   <!-- Name the app in the div tag: -->
+   <div ng-app="myApp">
+
+     <!-- The controller has the code: -->
+     <form ng-controller="UserController" ng-submit="sendData()">
+
+       <p>
+       <label>Enter your name: </label>
+       <input id="username" type="text" ng-model="name" placeholder="User Name" onblur="this.placeholder = 'User Name'" onfocus="this.placeholder = ''" />
+
+       <p>
+       <button id="formBtn" type="submit">Submit</button>
+
+       <p>
+       <span id="welcomeText" class="cssStyling">{{msgFromServlet}}</span>
+    
+     </form>           
+     <!-- end of controller scope -->
+
+   </div>
+   <!-- end of app -->
+
+</body>
+</html>

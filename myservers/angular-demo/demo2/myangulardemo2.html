@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <title>AngularJS Demo - HTML file</title>
+       <!-- Main angular library: -->
+       <script type="text/javascript" src="angular.min.js"></script>
+
+       <!-- Our javacript code: -->
+       <script type="text/javascript" src="myform2.js"></script>
+</head>
+
+<html>
+<body>
+    <h1>AngularJS Demo #2</h1>
+
+    <div ng-app="myApp">
+       <form ng-controller="myController">
+           <h3>{{greeting.text}}</h3>
+           <button id="changetext" ng-click="changeText()">Change greeting text</button>
+
+           <p>
+           <label>Enter your name: </label>
+           <input id="username" type="text" ng-model="name" placeholder="User Name" onblur="this.placeholder = 'User Name'" onfocus="this.placeholder = ''" />
+
+           <p>
+           <button id="formBtn" type="submit" ng-click="sendData()">Submit</button>
+
+           <p>
+           <span id="welcomeText">{{msgFromServlet}}</span>
+
+        </form>
+    </div>
+</body>
+</html>
+

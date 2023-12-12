@@ -1,0 +1,11 @@
+2019-05-25 15:28:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: This CLOB or BLOB reference timed out: "7740/-3" [90039-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.store.LobStorageMap.getInputStream(LobStorageMap.java:281)
+	at org.h2.value.ValueLobDb.getInputStream(ValueLobDb.java:386)
+	at org.h2.value.ValueLobDb.getReader(ValueLobDb.java:371)
+	at org.h2.jdbc.JdbcClob.getCharacterStream(JdbcClob.java:111)
+	at RelDBSearchMovies.search(RelDBSearchMovies.java:52)
+	at RelDBSearchMovies.main(RelDBSearchMovies.java:19)
