@@ -60,6 +60,7 @@ This book selling web application features a customer side with a user-friendly 
   <img width="595" alt="image" src="https://github.com/user-attachments/assets/b9f18892-cd65-400f-8a62-1c906e63ff23">
 
 
-**Please find the design document for more information**
+
+#**Please find the design document for more information**
 
 
